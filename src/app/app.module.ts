@@ -6,6 +6,7 @@ import { RegistrazioneComponent } from './components/registrazione/registrazione
 import { AppRoutingModule } from './modules/app-routing.module';
 import { PaginaNontrovataComponent } from './components/pagina-nontrovata/pagina-nontrovata.component';
 import { HomeComponent } from './components/home-component/home-component.component';
+import { LoginComponent } from './components/login/login.component';
 
 @NgModule({
   declarations: [
@@ -13,6 +14,7 @@ import { HomeComponent } from './components/home-component/home-component.compon
     RegistrazioneComponent,
     PaginaNontrovataComponent,
     HomeComponent
+    LoginComponent
   ],
   imports: [
     BrowserModule,
