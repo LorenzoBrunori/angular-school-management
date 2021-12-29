@@ -1,26 +1,23 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { BrowserModule } from "@angular/platform-browser";
+import { NgModule } from "@angular/core";
 
-import { AppComponent } from './app.component';
-import { RegistrazioneComponent } from './components/registrazione/registrazione.component';
-import { AppRoutingModule } from './modules/app-routing.module';
-import { PaginaNontrovataComponent } from './components/pagina-nontrovata/pagina-nontrovata.component';
-import { HomeComponent } from './components/home-component/home-component.component';
-import { LoginComponent } from './components/login/login.component';
+import { AppComponent } from "./app.component";
+import { RegistrazioneComponent } from "./components/registrazione/registrazione.component";
+import { AppRoutingModule } from "./modules/app-routing.module";
+import { PaginaNontrovataComponent } from "./components/pagina-nontrovata/pagina-nontrovata.component";
+import { HomeComponent } from "./components/home-component/home-component.component";
+import { LoginComponent } from "./components/login/login.component";
 
 @NgModule({
   declarations: [
     AppComponent,
     RegistrazioneComponent,
     PaginaNontrovataComponent,
-    HomeComponent
-    LoginComponent
+    HomeComponent,
+    LoginComponent,
   ],
-  imports: [
-    BrowserModule,
-    AppRoutingModule
-  ],
+  imports: [BrowserModule, AppRoutingModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
