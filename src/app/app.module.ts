@@ -8,6 +8,7 @@ import { PaginaNontrovataComponent } from './components/pagina-nontrovata/pagina
 import { HomeComponent } from './components/home-component/home-component.component';
 import { LoginComponent } from './components/login/login.component';
 import { FormsModule } from '@angular/forms';
+import { UtentiComponent } from './components/utenti/utenti.component';
 
 @NgModule({
   declarations: [
@@ -15,7 +16,8 @@ import { FormsModule } from '@angular/forms';
     RegistrazioneComponent,
     PaginaNontrovataComponent,
     HomeComponent,
-    LoginComponent
+    LoginComponent,
+    UtentiComponent
   ],
   imports: [
     BrowserModule,
