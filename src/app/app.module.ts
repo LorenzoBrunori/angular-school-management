@@ -22,10 +22,7 @@ import { AuthService } from "./services/auth.service";
     HomeComponent,
     LoginComponent,
     UtentiComponent,
-<<<<<<< HEAD
     EditUserComponent
-=======
->>>>>>> b76d2d3e94417a69625ba8b53318004bfc653324
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [AuthGuard, AuthService],
