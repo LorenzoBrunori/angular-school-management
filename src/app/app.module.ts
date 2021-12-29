@@ -8,6 +8,7 @@ import { PaginaNontrovataComponent } from "./components/pagina-nontrovata/pagina
 import { HomeComponent } from "./components/home-component/home-component.component";
 import { LoginComponent } from "./components/login/login.component";
 import { FormsModule } from "@angular/forms";
+import { UtentiComponent } from "./components/utenti/utenti.component";
 import { HttpClientModule } from "@angular/common/http";
 import { AuthGuard } from "./services/auth-guard.service";
 
@@ -18,6 +19,7 @@ import { AuthGuard } from "./services/auth-guard.service";
     PaginaNontrovataComponent,
     HomeComponent,
     LoginComponent,
+    UtentiComponent,
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [AuthGuard],
