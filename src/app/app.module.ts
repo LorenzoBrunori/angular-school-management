@@ -10,6 +10,7 @@ import { LoginComponent } from './components/login/login.component';
 import { FormsModule } from '@angular/forms';
 import { UtentiComponent } from './components/utenti/utenti.component';
 import { HttpClientModule } from "@angular/common/http";
+import { EditUserComponent } from './components/utenti/edit-user/edit-user.component';
 
 @NgModule({
   declarations: [
@@ -18,7 +19,8 @@ import { HttpClientModule } from "@angular/common/http";
     PaginaNontrovataComponent,
     HomeComponent,
     LoginComponent,
-    UtentiComponent
+    UtentiComponent,
+    EditUserComponent
   ],
   imports: [
     BrowserModule,

@@ -1,0 +1,14 @@
+.card-artista{
+    border: 1px solid lightgray;
+}
+
+.spacer{
+    margin-top: 25px;
+}
+
+.button-container{
+    display: flex;
+    justify-content: space-between;
+    margin: 0 5px 0 5px;
+}
+
