@@ -1,14 +1,14 @@
 {
-  "users" : [
-    {
-      "nome" : "John",
-      "cognome" : "Cena",
-      "numero_telefono" : "33884551258",
-      "sesso" : "M",
-      "eta" : "41",
-      "ruolo" : "direttore",
-      "email" : "johncena@gmail.com",
-      "password" : "johncena123"
-    }
-  ]
+    "users": [
+        {
+            "nome": "John",
+            "cognome": "Cena",
+            "numero_telefono": "33884551258",
+            "sesso": "M",
+            "eta": "41",
+            "ruolo": "direttore",
+            "email": "johncena@gmail.com",
+            "password": "johncena123"
+        }
+    ]
 }
