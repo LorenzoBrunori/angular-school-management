@@ -7,18 +7,20 @@ import { AppRoutingModule } from './modules/app-routing.module';
 import { PaginaNontrovataComponent } from './components/pagina-nontrovata/pagina-nontrovata.component';
 import { HomeComponent } from './components/home-component/home-component.component';
 import { LoginComponent } from './components/login/login.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
     AppComponent,
     RegistrazioneComponent,
     PaginaNontrovataComponent,
-    HomeComponent
+    HomeComponent,
     LoginComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule, 
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
