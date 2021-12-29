@@ -5,9 +5,9 @@
       "nome": "John",
       "cognome": "Cena",
       "numero_telefono": "33884551258",
-      "sesso": "M",
+      "sesso": "maschio",
       "eta": "41",
-      "ruolo": "direttore",
+      "ruolo": "preside",
       "email": "johncena@gmail.com",
       "password": "johncena123"
     },

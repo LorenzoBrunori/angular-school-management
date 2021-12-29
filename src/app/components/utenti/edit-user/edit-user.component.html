@@ -1,0 +1,101 @@
+<div class="backdrop" (click)="onClose()"></div>
+
+<div class="edit-box">
+    <h2>Modifica i dati di {{user.nome}} {{user.cognome}}</h2>
+    <form (ngSubmit)="onSave()" #formObj="ngForm">
+        <div class="form-group row">
+            <label for="email">Email</label>
+            <div class="col-sm-10">
+                <input type="email" id="email" name="email" class="form-control" [(ngModel)]="userCopy.email" required>
+            </div>
+        </div>
+        <h3>Dati Utente</h3>
+        <div class="form-group row">
+            <label for="nome">nome</label>
+            <div class="col-sm-10">
+                <input type="text" name="nome" id="nome" class="form-control" [(ngModel)]="userCopy.nome" required>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="cognome">cognome</label>
+            <div class="col-sm-10">
+                <input type="text" name="cognome" id="cognome" class="form-control" [(ngModel)]="userCopy.cognome" required>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="eta">eta'</label>
+            <div class="col-sm-10">
+                <input type="number" name="eta" id="eta" class="form-control" [(ngModel)]="userCopy.eta" required>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="numeroTelefono">numero di telefono</label>
+            <div class="col-sm-10">
+                <input type="text" name="numeroTelefono" id="numeroTelefono" class="form-control"
+                    [(ngModel)]="userCopy.numero_telefono" required>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="sesso">sesso</label>
+            <div class="col-sm-10" [ngSwitch]="user.sesso">
+
+                <select *ngSwitchCase="'maschio'" class="form-select" name="sesso" id="sesso" aria-placeholder="" [(ngModel)]="userCopy.sesso"
+                    required>
+                    <option value="maschio" selected>Maschio</option>
+                    <option value="femmina">Femmina</option>
+                    <option value="non-Specificato">Non Specificare</option>
+                </select>
+                <select *ngSwitchCase="'femmina'" class="form-select" name="sesso" id="sesso" aria-placeholder=""
+                    [(ngModel)]="userCopy.sesso" required>
+                    <option value="maschio" >Maschio</option>
+                    <option value="femmina" selected>Femmina</option>
+                    <option value="non-specificato">Non Specificare</option>
+                </select>
+                <select *ngSwitchCase="'non-specificato'" class="form-select" name="sesso" id="sesso" aria-placeholder=""
+                    [(ngModel)]="userCopy.sesso" required>
+                    <option value="maschio">Maschio</option>
+                    <option value="femmina">Femmina</option>
+                    <option value="non-specificato" selected>Non Specificare</option>
+                </select>
+            </div>
+        </div>
+        <div class="form-group row">
+            <label for="ruolo">ruolo</label>
+            <div class="col-sm-10" [ngSwitch]="user.ruolo">
+                <select *ngSwitchCase="'studente'" class="form-select" name="ruolo" id="ruolo" aria-label="Default select" [(ngModel)]="userCopy.ruolo"
+                    required>
+                    <option value="studente" selected>studente</option>
+                    <option value="insegnante">insegnante</option>
+                    <option value="preside">preside</option>
+                    <option value="esterno">esterno</option>
+                </select>
+                <select *ngSwitchCase="'insegnante'" class="form-select" name="ruolo" id="ruolo" aria-label="Default select" [(ngModel)]="userCopy.ruolo"
+                    required>
+                    <option value="studente" >studente</option>
+                    <option value="insegnante" selected>insegnante</option>
+                    <option value="preside">preside</option>
+                    <option value="esterno">esterno</option>
+                </select>
+                <select *ngSwitchCase="'preside'" class="form-select" name="ruolo" id="ruolo" aria-label="Default select" [(ngModel)]="userCopy.ruolo"
+                    required>
+                    <option value="studente" >studente</option>
+                    <option value="insegnante">insegnante</option>
+                    <option value="preside" selected>preside</option>
+                    <option value="esterno">esterno</option>
+                </select>
+                <select *ngSwitchCase="'esterno'" class="form-select" name="ruolo" id="ruolo" aria-label="Default select" [(ngModel)]="userCopy.ruolo"
+                    required>
+                    <option value="studente" >studente</option>
+                    <option value="insegnante">insegnante</option>
+                    <option value="preside">preside</option>
+                    <option value="esterno" selected>esterno</option>
+                </select>
+            </div>
+        </div>
+        <div class="edit-box-actions">
+        <button [disabled]="!formObj.valid" class="btn btn-success">Salva</button>
+        <button class="btn btn-primary" type="button" (click)="onClose()">close</button>
+    </div>
+    </form>
+        
+</div>

@@ -1,11 +1,16 @@
-<div class="container">
+<div class="container spacer">
+    <!-- (save) = "onSaveEdit()" -->
+    <app-edit-user [user] = "userToEdit" *ngIf="editMode"  (close)="onClose()"></app-edit-user>
     <div class="row">
-        <div class="col-xs-12">
-            <div class="card-artista" *ngFor="let user of users">
+        <div class="col-sm-12 col-md-6 col-lg-3" *ngFor="let user of users;let i = index">
+            <div class="card-artista" >
                 <h5>{{user.nome}} {{user.cognome}}</h5>
-                
-
-
+                <p>telefono: {{user.numero_telefono}}</p>
+                <p>sesso: {{user.sesso}}</p>
+                <p>eta: {{user.eta}}</p>
+                <p>ruolo: {{user.ruolo}}</p>
+                <p>email: {{user.email}}</p>
+                <div class="button-container"><button class="btn btn-primary"  (click)="onEdit(i)">Edit</button><button class="btn btn-danger" (click)="onDelete(i)">Delete</button></div>
             </div>
         </div>
     </div>

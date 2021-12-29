@@ -10,6 +10,7 @@ import { LoginComponent } from "./components/login/login.component";
 import { FormsModule } from "@angular/forms";
 import { UtentiComponent } from "./components/utenti/utenti.component";
 import { HttpClientModule } from "@angular/common/http";
+import { EditUserComponent } from './components/utenti/edit-user/edit-user.component';
 import { AuthGuard } from "./services/auth-guard.service";
 import { AuthService } from "./services/auth.service";
 
@@ -21,6 +22,7 @@ import { AuthService } from "./services/auth.service";
     HomeComponent,
     LoginComponent,
     UtentiComponent,
+    EditUserComponent
   ],
   imports: [BrowserModule, AppRoutingModule, FormsModule, HttpClientModule],
   providers: [AuthGuard, AuthService],

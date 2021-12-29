@@ -16,5 +16,7 @@ export const AppRoutes: Routes = [
 
   { path: "login", component: LoginComponent },
 
+  { path: "utenti", component: UtentiComponent},
+
   { path: "**", redirectTo: "", pathMatch: "full" },
 ];
