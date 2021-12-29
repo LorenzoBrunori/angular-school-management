@@ -1,5 +1,5 @@
 <div class="container">
-  <form (ngSubmit)="onSubmit()" #loginForm="ngForm">
+  <form (ngSubmit)="logIn()" #loginForm="ngForm">
     <div class="form-group">
       <label for="exampleInputEmail1">Email address</label>
       <input
@@ -36,8 +36,13 @@
       <input type="checkbox" class="form-check-input" id="exampleCheck1" />
       <label class="form-check-label" for="exampleCheck1">Check me out</label>
     </div>
-    <button type="submit" class="btn btn-primary">Submit</button>
+    <button type="submit" class="btn btn-primary" [disabled]="!loginForm.valid">
+      Login
+    </button>
   </form>
+  <button type="submit" class="btn btn-danger my-3" (click)="logOut()">
+    Logout
+  </button>
   <div class="your-datas">
     <p>{{ user.email }}</p>
     <p>{{ user.password }}</p>
