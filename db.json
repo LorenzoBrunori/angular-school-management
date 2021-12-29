@@ -12,12 +12,14 @@
       "password": "johncena123"
     },
     {
-      "nome": "Andrea",
-      "cognome": "Valeri",
-      "sesso": "femmina",
-      "ruolo": "preside",
-      "email": "zenzero.ere@gmail.com",
-      "password": "12122121",
+      "nome": "a",
+      "cognome": "Valeriv",
+      "numero_telefono": "22313131313",
+      "sesso": "maschio",
+      "eta": 24,
+      "ruolo": "insegnante",
+      "email": "prova@gmail.com",
+      "password": "12321313213",
       "id": 1
     }
   ]

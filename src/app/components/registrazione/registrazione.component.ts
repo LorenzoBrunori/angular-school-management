@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
-import { NgForm } from '@angular/forms';
+import { Form, NgForm } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { AppComponent } from 'src/app/app.component';
 import { DataStorageService } from 'src/app/services/data-storage.service';
@@ -27,7 +27,6 @@ export class RegistrazioneComponent implements OnInit {
   onSubmit(form: NgForm){
     const user = this.createUser(form.value);
 
-
     this.dataHandling.postUser(user).subscribe(data => {
       console.log(data);
     }, er => {
@@ -36,7 +35,9 @@ export class RegistrazioneComponent implements OnInit {
     );
   }
 
-  createUser(value: any){
+  // è giusto any? o si può tipizzare maggiormente?
+
+  createUser(value: User) {
     const body: User = new newUser(value.nome, value.cognome, value.numero_telefono,value.sesso,value.eta, value.ruolo, value.email, value.password);
     return body;
   }
