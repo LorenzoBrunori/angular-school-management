@@ -1,3 +1,4 @@
+import { HttpClient } from "@angular/common/http";
 import { Component, ElementRef, OnInit, ViewChild } from "@angular/core";
 import { NgForm } from "@angular/forms";
 
@@ -14,13 +15,17 @@ export class LoginComponent implements OnInit {
     password: "",
   };
 
-  constructor() {}
+  constructor(private http: HttpClient) {}
 
   ngOnInit(): void {}
 
-  onSubmit() {
+  logIn() {
     this.submitted = true;
     this.user.email = this.loginForm.value.email;
     this.user.password = this.loginForm.value.password;
+
+    this.http.get("http://localhost:3000/users/1").subscribe((users) => {
+      console.log(users);
+    });
   }
 }
