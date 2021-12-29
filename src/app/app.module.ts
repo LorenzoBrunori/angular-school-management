@@ -1,5 +1,5 @@
-import { BrowserModule } from '@angular/platform-browser';
-import { NgModule } from '@angular/core';
+import { BrowserModule } from "@angular/platform-browser";
+import { NgModule } from "@angular/core";
 
 import { AppComponent } from './app.component';
 import { RegistrazioneComponent } from './components/registrazione/registrazione.component';
@@ -22,7 +22,8 @@ import { FormsModule } from '@angular/forms';
     AppRoutingModule, 
     FormsModule
   ],
+  imports: [BrowserModule, AppRoutingModule],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent],
 })
-export class AppModule { }
+export class AppModule {}
