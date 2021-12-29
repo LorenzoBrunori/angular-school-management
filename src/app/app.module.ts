@@ -9,6 +9,7 @@ import { HomeComponent } from './components/home-component/home-component.compon
 import { LoginComponent } from './components/login/login.component';
 import { FormsModule } from '@angular/forms';
 import { UtentiComponent } from './components/utenti/utenti.component';
+import { HttpClientModule } from "@angular/common/http";
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { UtentiComponent } from './components/utenti/utenti.component';
   imports: [
     BrowserModule,
     AppRoutingModule, 
-    FormsModule
+    FormsModule,
+    HttpClientModule
   ],
   providers: [],
   bootstrap: [AppComponent],
