@@ -3,6 +3,7 @@ import { Component, ElementRef, OnInit, ViewChild } from "@angular/core";
 import { NgForm } from "@angular/forms";
 import { AuthService } from "src/app/services/auth.service";
 import { map } from "rxjs/operators";
+import { Router } from "@angular/router";
 
 @Component({
   selector: "app-login",
@@ -11,6 +12,7 @@ import { map } from "rxjs/operators";
 })
 export class LoginComponent implements OnInit {
   @ViewChild("loginForm") loginForm: NgForm;
+  accessoFallito = false;
   submitted = false;
   users = [];
   user = {
@@ -18,7 +20,11 @@ export class LoginComponent implements OnInit {
     password: "",
   };
 
-  constructor(private http: HttpClient, private authService: AuthService) {}
+  constructor(
+    private http: HttpClient,
+    private authService: AuthService,
+    private router: Router
+  ) {}
 
   ngOnInit(): void {}
 
@@ -50,9 +56,11 @@ export class LoginComponent implements OnInit {
             users[i].password == this.user.password
           ) {
             this.authService.login();
+            this.accessoFallito = false;
+            this.router.navigate(["/utente"]);
             break;
           } else {
-            console.log("ACCESSO FALLITO");
+            this.accessoFallito = true;
           }
         }
       });
@@ -60,5 +68,9 @@ export class LoginComponent implements OnInit {
 
   logOut() {
     this.authService.logout();
+  }
+
+  isLogged() {
+    return this.authService.loggedIn;
   }
 }
