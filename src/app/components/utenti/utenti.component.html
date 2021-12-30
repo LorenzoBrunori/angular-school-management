@@ -1,6 +1,10 @@
 <div class="container spacer">
-    <!-- (save) = "onSaveEdit()" -->
-    <app-edit-user [user] = "userToEdit" *ngIf="editMode"  (close)="onClose()"></app-edit-user>
+    <app-edit-user [user] = "userToEdit" 
+    *ngIf="editMode != null" 
+    [editMode] = "editMode" 
+    (close)="onClose()" 
+    (save) = "onSaveEdit()"
+    (delete)="deleteWasApproved()"></app-edit-user>
     <div class="row">
         <div class="col-sm-12 col-md-6 col-lg-3" *ngFor="let user of users;let i = index">
             <div class="card-artista" >

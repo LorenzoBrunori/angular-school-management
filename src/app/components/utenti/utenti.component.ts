@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { HttpClient } from "@angular/common/http";
 import { User } from 'src/app/shared/user.interface';
+import { threadId } from 'worker_threads';
 
 @Component({
   selector: 'app-utenti',
@@ -9,8 +10,9 @@ import { User } from 'src/app/shared/user.interface';
 })
 export class UtentiComponent implements OnInit {
 
-  editMode : boolean = false;
+  editMode : string = null;
   userToEdit: User;
+  idReference: number;
   users:  User[] = [];
 
   constructor(private http: HttpClient) { }
@@ -27,7 +29,7 @@ export class UtentiComponent implements OnInit {
   }
 
   onEdit(id: number){
-    this.editMode = true;
+    this.editMode = "edit";
     this.userToEdit = this.users[id];
   }
 
@@ -36,18 +38,23 @@ export class UtentiComponent implements OnInit {
   }
 
   onClose(){
-    this.editMode = false;
+    this.editMode = null;
   }
 
   onDelete(id: number){
-    this.http.delete("http://localhost:3000/users/" + id).subscribe(
+    this.editMode = "delete";
+    this.userToEdit = this.users[id];
+    this.idReference = id;
+  }
+
+  deleteWasApproved(){
+    this.http.delete("http://localhost:3000/users/" + this.idReference).subscribe(
       res => {
-        this.users.splice(id);
+        this.users.splice(this.idReference);
       },
       err => {
         console.log(err);
       }
     )
   }
-
 }

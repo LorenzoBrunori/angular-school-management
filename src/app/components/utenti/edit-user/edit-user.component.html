@@ -1,6 +1,6 @@
 <div class="backdrop" (click)="onClose()"></div>
 
-<div class="edit-box">
+<div class="edit-box" *ngIf="editMode == 'edit'">
     <h2>Modifica i dati di {{user.nome}} {{user.cognome}}</h2>
     <form (ngSubmit)="onSave()" #formObj="ngForm">
         <div class="form-group row">
@@ -93,9 +93,13 @@
             </div>
         </div>
         <div class="edit-box-actions">
-        <button [disabled]="!formObj.valid" class="btn btn-success">Salva</button>
-        <button class="btn btn-primary" type="button" (click)="onClose()">close</button>
-    </div>
-    </form>
-        
+            <button [disabled]="!formObj.valid" class="btn btn-success">Salva</button>
+            <button class="btn btn-primary" type="button" (click)="onClose()">close</button>
+        </div>
+    </form>    
+</div>
+<div class="edit-box" *ngIf="editMode == 'delete'">
+    <h2>Elimina i dati di {{user.nome}} {{user.cognome}}</h2>
+    <button class="btn btn-danger" type="button" (click)="onConfirm()">Conferma operazione</button> |
+    <button class="btn btn-primary" type="button" (click)="onClose()">Annulla operazione</button>
 </div>

@@ -8,7 +8,10 @@ import { User } from 'src/app/services/user.interface';
 })
 export class EditUserComponent implements OnInit{
   @Input() user: User;
+  @Input() editMode: string;
   @Output() close = new EventEmitter<void>();
+  @Output() delete = new EventEmitter<void>();
+
 
   userCopy: User;
   constructor() { }
@@ -29,6 +32,11 @@ export class EditUserComponent implements OnInit{
     this.user.sesso = this.userCopy.sesso;
     this.user.ruolo = this.userCopy.ruolo;
     this.user.numero_telefono = this.userCopy.numero_telefono;
+    this.close.emit();
+  }
+
+  onConfirm() {
+    this.delete.emit();
     this.close.emit();
   }
 }
